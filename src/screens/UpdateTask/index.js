@@ -74,7 +74,7 @@ const UpdateTaskScreen = (props) => {
                 />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={(id, task, userId) => updatetask(id, task, userId)}>
+                    onPress={() => updatetask(id, task, userId)}>
                         <Text style={styles.label}>Update Task</Text>
                 </TouchableOpacity>
             </View>

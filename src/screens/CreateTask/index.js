@@ -34,14 +34,22 @@ const CreateTaskScreen = (props) => {
     }
 
     function addtask(id, task, userId) {
-        AddTask({
-            variables: {
-                id: id,
-                task: task,
-                userId: userId,
-            },
-        });
-        Alert.alert("Info", "Data berhasil ditambahkan");
+        console.log(id, task, userId);
+        
+        try {
+            AddTask({
+                variables: {
+                    id: id,
+                    task: task,
+                    userId: userId,
+                },
+            });
+            Alert.alert("Info", "Data berhasil ditambahkan");
+        }
+        catch(error) {
+            console.log(error);
+            Alert.alert("Info", "Error");
+        }
     }
 
     return(
@@ -74,7 +82,7 @@ const CreateTaskScreen = (props) => {
                 />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={(id, task, userId) => addtask(id, task, userId)}>
+                    onPress={() => addtask(id, task, userId) }> 
                         <Text style={styles.label}>Create Task</Text>
                 </TouchableOpacity>
             </View>

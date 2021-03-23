@@ -72,7 +72,7 @@ const DeleteTaskScreen = (props) => {
                 />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={(id) => deletetask(id)}>
+                    onPress={() => deletetask(id)}>
                         <Text style={styles.label}>Delete Task</Text>
                 </TouchableOpacity>
             </View>
